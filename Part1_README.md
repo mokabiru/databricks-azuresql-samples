@@ -1,6 +1,13 @@
 ## Solution Part 1
 ![enter image description here](https://github.com/mokabiru/databrickssqlmi/raw/master/media/Solution%20Architecture%20Numbered%20.jpg)
 
+1. The solution extracts the COVID-19 public dataset available in a data lake (Azure Storage – Blob / ADLS Gen2) into Azure Databricks as a dataframe.
+2. The extracted COVID-19 dataset is cleaned, pre-processed, trained and scored using a Gradient Boosted Trees (GBT) Machine Learning model.
+> GBT is chosen to predict the deaths on a given day in a given country
+> purely for demonstration purposes only and should not be considered as
+> the only model for such prediction.
+3. The resulting dataset with the predicted scores is stored into a staging table in Azure SQL Managed Instance for further downstream transformation.
+
 Notebook 1: [Covid19-DatabricksML-SQLMI](https://github.com/mokabiru/databrickssqlmi/blob/master/DatabricksNotebooks/Covid19-DatabricksML-SQLMI.dbc)
 
 This notebook executes steps 1-3 as described in the solution architecture above. It loads the dataset from the publicly available _[pandemicdatalake](https://azure.microsoft.com/en-au/services/open-datasets/catalog/ecdc-covid-19-cases/)_ in Azure Storage.
