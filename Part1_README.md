@@ -30,9 +30,9 @@ The final step is to make predictions on the test dataset by calling `transform(
 
 The predicted dataset (stored in a dataframe) is then written to a staging table `dbo.StagingPredictedCovid19` in SQL MI.<BR>
 
-To demonstrate the integration using both the Microsoft SQL Server JDBC driver library (`mssql-jdbc`) and the Azure SQL Database Spark connector library (`azure-sqldb-spark`), this notebook uses the `mssql-jdbc` driver while the notebook in Part 2 (COVID19-Load-SQLManagedInstance) uses the `azure-sqldb-spark` connector.
+To demonstrate the integration using both the [Microsoft SQL Server JDBC driver library](https://docs.microsoft.com/en-us/azure/databricks/data/data-sources/sql-databases) (`mssql-jdbc`) and the [Azure SQL Database Spark connector library](https://docs.microsoft.com/en-us/azure/databricks/data/data-sources/sql-databases-azure) (`azure-sqldb-spark`), this notebook uses the `mssql-jdbc` driver while the notebook in Part 2 (COVID19-Load-SQLManagedInstance) uses the `azure-sqldb-spark` connector.
 
-> While the Microsoft SQL Server JDBC driver library (mssql-jdbc) is pre-installed in Databricks Runtime 3.4 and above, the Azure SQL Database Spark connector needs to be exclusively installed as shown in the pre-requisites section of this solution.
+> While the Microsoft SQL Server JDBC driver library (mssql-jdbc) is pre-installed in [Databricks Runtime 3.4](https://docs.microsoft.com/en-us/azure/databricks/release-notes/runtime/3.4#pre-installed-java-and-scala-libraries-scala-210-cluster-version) and above, the Azure SQL Database Spark connector needs to be exclusively installed as shown in the pre-requisites section of this solution.
 
 *Compared to the built-in JDBC connector, the Azure SQL Database Spark connector provides the ability to bulk insert data into SQL databases. It can outperform row-by-row insertion with 10x to 20x faster performance. The Spark connector for SQL Server and Azure SQL Database also supports Azure Active Directory (Azure AD) authentication, enabling connectivity to Azure SQL databases from Azure Databricks using an Azure AD account.*
 ![enter image description here](https://github.com/mokabiru/databrickssqlmi/raw/master/media/notebook1-writetoMI.png)
