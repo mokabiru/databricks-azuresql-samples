@@ -70,6 +70,6 @@ Notebook 2 ([COVID19-Load-SQLManagedInstance](https://github.com/mokabiru/databr
 ![enter image description here](https://github.com/mokabiru/databrickssqlmi/raw/master/media/installlibrary.png)
 ![enter image description here](https://github.com/mokabiru/databrickssqlmi/raw/master/media/maveninstall.png)
 
-**Prepare SQL MI Datamart:**<br>A sample BACPAC file `Covid19datamart.bacpac` is provided [here](https://github.com/mokabiru/databrickssqlmi/tree/master/SQLMI/bacpac) to import and create the datamart in SQL MI. Any existing data in Staging or Fact table needs to be deleted as the solution will insert a new dataset from the data lake. After importing the file from the GitHub repo to create the datamart in Azure SQL Managed Instance, run the following stored procedure on the imported datamart:
+**2. Prepare SQL MI Datamart:**<br>A sample BACPAC file `Covid19datamart.bacpac` is provided [here](https://github.com/mokabiru/databrickssqlmi/tree/master/SQLMI/bacpac) to import and create the datamart in SQL MI. Any existing data in Staging or Fact table needs to be deleted as the solution will insert a new dataset from the data lake. After importing the file from the GitHub repo to create the datamart in Azure SQL Managed Instance, run the following stored procedure on the imported datamart:
 
     EXEC sp_cleanuptables ‘all’
