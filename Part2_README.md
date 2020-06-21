@@ -47,3 +47,7 @@ The fact data can be visualized by reporting or data visualization tools like [P
 
 **Data visualization:**
 ![enter image description here](https://github.com/mokabiru/databrickssqlmi/raw/master/media/map.png)
+
+[**<-- Go back to Part 1**](https://github.com/mokabiru/databrickssqlmi/blob/master/Part1_README.md)
+
+[**<-- Go to main page -->**](https://github.com/mokabiru/databrickssqlmi)
