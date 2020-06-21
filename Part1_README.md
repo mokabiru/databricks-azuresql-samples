@@ -44,3 +44,7 @@ The records can be verified by querying the table `dbo.StagingPredictedCovid19` 
 ![enter image description here](https://github.com/mokabiru/databrickssqlmi/raw/master/media/SQLMInotebook1screenshot.png)
 ![enter image description here](https://github.com/mokabiru/databrickssqlmi/raw/master/media/stagingtableresults.png)
 In the next part of the solution, data from this staging table is read back into Databricks along with the dimension table `dbo.DimCountry`, joined together and transformed to create a denormalized dataset to be written into the fact table `dbo.FactCovid19`.
+
+[**Proceed to Part 2 -->**](https://github.com/mokabiru/databrickssqlmi/blob/master/Part2_README.md)
+
+[**<-- Go back to main page**](https://github.com/mokabiru/databrickssqlmi)
