@@ -59,9 +59,20 @@ Node specification: Standard_DS3_v2*
 2. **Azure SQL Managed Instance Business Critical 4vCores** (General Purpose can also be used). Business Critical is used for demonstration as it comes with a built-in Read Only replica that can be used for data reads / reporting.
 3. **Azure Key Vault (Standard)** – to save secrets such as SQL Managed Instance login password
 
-The solution is divided into two parts in two Azure Databricks notebooks. Click on the links below to dive deeper into each part of the solution.
-Part 1 walkthrough:
+The solution is divided into two parts in two Azure Databricks notebooks. Click on the links below to dive deeper into each part of the solution. <br>
+[**Part 1 walkthrough**](https://github.com/mokabiru/databrickssqlmi/blob/master/Part1_README.md): 
 Notebook 1 ([Covid19-DatabricksML-SQLMI](https://github.com/mokabiru/databrickssqlmi/blob/master/DatabricksNotebooks/Covid19-DatabricksML-SQLMI.dbc)) emphasizes on the machine learning model training and prediction that executes Steps 1-3 in the data flow described above.
 
-Part 2 walkthrough:
+[**Part 2 walkthrough**](https://github.com/mokabiru/databrickssqlmi/blob/master/Part2_README.md):
 Notebook 2 ([COVID19-Load-SQLManagedInstance](https://github.com/mokabiru/databrickssqlmi/blob/master/DatabricksNotebooks/COVID19-Load-SQLManagedInstance.dbc)) emphasizes on reading and writing data to Azure SQL Managed Instance using the Spark AzureSQL Connector that executes steps 4-6 in the data flow above.
+
+**Pre-requisites steps:**
+**1. Install Spark Connector for Azure SQL Database:**
+Install the [Spark AzureSQLDB connector library](https://docs.microsoft.com/en-us/azure/databricks/data/data-sources/sql-databases-azure) (`azure-sqldb-spark`) on the Databricks cluster either by manually downloading and uploading the [.jar file](https://github.com/Azure/azure-sqldb-spark/tree/master/releases/azure-sqldb-spark-1.0.0) or importing the Maven coordinate `com.microsoft.azure:azure-sqldb-spark:1.0.2` as shown below:
+![enter image description here](https://github.com/mokabiru/databrickssqlmi/raw/master/media/installlibrary.png)
+![enter image description here](https://github.com/mokabiru/databrickssqlmi/raw/master/media/maveninstall.png)
+
+**Prepare SQL MI Datamart:**
+A sample BACPAC file `Covid19datamart.bacpac` is provided [here](https://github.com/mokabiru/databrickssqlmi/tree/master/SQLMI/bacpac) to import and create the datamart in SQL MI. Any existing data in Staging or Fact table needs to be deleted as the solution will insert a new dataset from the data lake. After importing the file from the GitHub repo to create the datamart in Azure SQL Managed Instance, run the following stored procedure on the imported datamart:
+
+    EXEC sp_cleanuptables ‘all’
