@@ -1,4 +1,4 @@
-The objective of this solution is to showcase the integration between Azure Databricks and Azure SQL Managed Instance to deliver insights and data visualizations using a publicly available COVID-19 dataset. In doing so, the solution uses the COVID-19 dataset and runs a machine learning model in Databricks to predict the fatalities which are then written into a datamart in Azure SQL Managed Instance for visualization and reporting.
+The objective of this solution is to showcase a use case to demonstrate the integration between Azure Databricks and Azure SQL Managed Instance to deliver insights and data visualizations using a publicly available COVID-19 dataset. While Azure Databricks provides the distributed computing power to process and transform complex datasets, Azure SQL Managed Instance acts as a recipient of the transformed dataset and serves it to business users. In doing so, the solution uses a publicly available COVID-19 dataset and runs a machine learning model in Databricks to predict the fatalities which are then written into a datamart in Azure SQL Managed Instance for visualization and reporting.
 
 > Note: Gradient Boosting Trees (GBT) Regression model has been used in
 > the solution purely for demonstration purposes and by no means should
@@ -10,7 +10,7 @@ The objective of this solution is to showcase the integration between Azure Data
 
 The [Spark connector](https://docs.microsoft.com/en-us/azure/azure-sql/database/spark-connector) enables databases in Azure SQL Database, Azure SQL Managed Instance, and SQL Server to act as the input data source or output data sink for Spark jobs. The Spark connector supports Azure Active Directory (Azure AD) authentication to connect to Azure SQL Database and Azure SQL Managed Instance and it utilizes the Microsoft JDBC Driver for SQL Server to move data between Spark worker nodes and databases.
 
-The connector can either be downloaded from the [azure-sqldb-spark GitHub repo](https://github.com/Azure/azure-sqldb-spark/tree/master/releases/azure-sqldb-spark-1.0.0) or imported into Azure Databricks using the Maven coordinate: _com.microsoft.azure:azure-sqldb-spark:1.0.2_
+The connector can either be downloaded from the [azure-sqldb-spark GitHub repo](https://github.com/Azure/azure-sqldb-spark/tree/master/releases/azure-sqldb-spark-1.0.0) or imported into Azure Databricks using the Maven coordinate: `com.microsoft.azure:azure-sqldb-spark:1.0.2`
 
 **Solution Architecture**
 
@@ -18,9 +18,7 @@ The solution architecture shown below depicts the various phases of data flow al
 
 ![Solution Architecture Image](https://github.com/mokabiru/databrickssqlmi/raw/master/media/Solution%20Architecture%20Numbered%20.jpg)
 
-_Fig.1_
-
-The solution comprises of the following parts as described in the data flow below (the sequence numbers are highlighted in the architecture diagram Fig. 1 above)
+The solution comprises of the following parts as described in the data flow below (the sequence numbers are highlighted in the architecture diagram above)
 
  1. The solution extracts the COVID-19 public dataset available in a
     data lake (Azure Storage – Blob / ADLS Gen2) into Azure Databricks
@@ -61,6 +59,9 @@ Node specification: Standard_DS3_v2*
 2. **Azure SQL Managed Instance Business Critical 4vCores** (General Purpose can also be used). Business Critical is used for demonstration as it comes with a built-in Read Only replica that can be used for data reads / reporting.
 3. **Azure Key Vault (Standard)** – to save secrets such as SQL Managed Instance login password
 
-The solution is divided into two parts in two Azure Databricks notebooks.
+The solution is divided into two parts in two Azure Databricks notebooks. Click on the links below to dive deeper into each part of the solution.
+Part 1 walkthrough:
 Notebook 1 ([Covid19-DatabricksML-SQLMI](https://github.com/mokabiru/databrickssqlmi/blob/master/DatabricksNotebooks/Covid19-DatabricksML-SQLMI.dbc)) emphasizes on the machine learning model training and prediction that executes Steps 1-3 in the data flow described above.
+
+Part 2 walkthrough:
 Notebook 2 ([COVID19-Load-SQLManagedInstance](https://github.com/mokabiru/databrickssqlmi/blob/master/DatabricksNotebooks/COVID19-Load-SQLManagedInstance.dbc)) emphasizes on reading and writing data to Azure SQL Managed Instance using the Spark AzureSQL Connector that executes steps 4-6 in the data flow above.
