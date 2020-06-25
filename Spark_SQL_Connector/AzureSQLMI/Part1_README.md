@@ -8,7 +8,7 @@
 > the only model for such prediction.
 3. The resulting dataset with the predicted scores is stored into a staging table in Azure SQL Managed Instance for further downstream transformation.
 
-Notebook 1: [Notebook1 - DatabricksML-SQLMI-V1]((https://github.com/mokabiru/databricks-azuresql-samples/blob/master/Spark_SQL_Connector/AzureSQLMI/DatabricksNotebooks/Notebook1%20-%20DatabricksML-SQLMI-V1.ipynb))
+Notebook 1: [Notebook1 - DatabricksML-SQLMI-V1](https://github.com/mokabiru/databricks-azuresql-samples/blob/master/Spark_SQL_Connector/AzureSQLMI/DatabricksNotebooks/Notebook1%20-%20DatabricksML-SQLMI-V1.ipynb)
 
 This notebook executes steps 1-3 as described in the solution architecture above. It loads the dataset from the publicly available _[pandemicdatalake](https://azure.microsoft.com/en-au/services/open-datasets/catalog/ecdc-covid-19-cases/)_ in Azure Storage.
 
