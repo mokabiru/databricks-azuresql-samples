@@ -76,7 +76,7 @@ The solution is divided into two parts in two Azure Databricks notebooks. Click 
 When creating the Databricks cluster, it is important to select the Databricks Runtime  with Scala version 2.11 (or higher) which is compatible with the Spark connector for SQL Server and Azure SQL.
 ![enter image description here](https://github.com/mokabiru/databricks-azuresql-samples/raw/master/Spark_SQL_Connector/AzureSQLMI/media/scalaversion.png)
 
-**2. Install Spark Connector for Azure SQL Database:**<br>Install the [Spark connector for SQL Server library](https://github.com/microsoft/sql-spark-connector/releases/tag/v1.0) (`azure-sqldb-spark`) on the Databricks cluster by manually downloading and uploading the [apache-spark-sql-connector.jar](https://github.com/microsoft/sql-spark-connector/releases/download/v1.0/apache-spark-sql-connector.jar)
+**2. Install Spark Connector for Azure SQL Database:**<br>Install the [Spark connector for SQL Server library](https://github.com/microsoft/sql-spark-connector/releases/tag/v1.0) (`azure-sqldb-spark`) on the Databricks cluster by manually downloading and uploading the [apache-spark-sql-connector.jar](https://github.com/microsoft/sql-spark-connector/releases/download/v1.0/apache-spark-sql-connector.jar)<BR>
 ![enter image description here](https://github.com/mokabiru/databricks-azuresql-samples/raw/master/Spark_SQL_Connector/AzureSQLMI/media/installlibrary.png)
 ![enter image description here](https://github.com/mokabiru/databricks-azuresql-samples/raw/master/Spark_SQL_Connector/AzureSQLMI/media/installjar.png)
 
